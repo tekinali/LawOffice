@@ -1,0 +1,101 @@
+﻿@using LawOffice.MvcWebUI.Areas.User.ViewModels.Question
+@model IndexViewModel
+
+@{
+    ViewBag.Title = "Sorular";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+
+                <a href="@Url.Action("Index","Question")" class="btn btn-secondary btn-icon-split mr-3">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-align-justify"></i>
+                    </span>
+                    <span class="text">Tüm Sorular</span>
+                </a>
+
+                <a href="@Url.Action("MyArea","Question")" class="btn btn-primary btn-icon-split mr-3">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-gavel"></i>
+                    </span>
+                    <span class="text">Alanımla İlgili Sorular</span>
+                </a>
+
+                <a href="@Url.Action("MyAnswers","Question")" class="btn btn-success btn-icon-split mr-3">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Cevapladığım Sorular</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">Sorular</h6>
+            </div>
+
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dtQuestions" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Kod</th>
+                                <th>Başlık</th>
+                                <th>Hukuk Alanı</th>
+                                <th>Cevap</th>
+                                <th>Tarih</th>
+                                <th style="width:5%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Questions)
+                            {
+                                <tr>
+                                    <td>@item.Code</td>
+                                    <td>@item.Subject</td>
+                                    <td>@item.FieldsOfLaw.Name</td>
+                                    <td>@item.Answers.Count</td>
+                                    <td>@item.CreatedOn</td>
+
+
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Details","Question",new { id=item.Id})" class="btn btn-primary btn-circle btn-sm" title="Detaylar">
+                                            <i class="fas fa-angle-right"></i>
+                                        </a>                             
+
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section dataTable
+{
+    <script>
+        $(document).ready(function () {
+            $('#dtQuestions').DataTable({
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Turkish.json"
+                }
+            });
+        });
+
+    </script>
+}

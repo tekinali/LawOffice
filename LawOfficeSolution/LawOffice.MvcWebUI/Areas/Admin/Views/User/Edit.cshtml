@@ -1,0 +1,198 @@
+﻿@using LawOffice.MvcWebUI.Areas.Admin.ViewModels.User
+@model EditViewModel
+
+@{
+    ViewBag.Title = "Kullanıcı Düzenle";
+}
+
+<!-- Content Row -->
+<div class="row">
+    <!-- Content Column -->
+    <div class="col-md-7 mb-4">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-dark">Kişisel Bilgiler</h6>
+                </div>
+                <div class="card-body">
+                    @Html.Hidden("Id", Model.User.Id)
+                    <div class="form-group row">
+                        <label for="Name" class="col-sm-3 col-form-label">Adı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("FirstName", Model.User.FirstName, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Name" class="col-sm-3 col-form-label">Soyadı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("LastName", Model.User.LastName, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="UserName" class="col-sm-3 col-form-label">Kullanıcı Adı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("UserName", Model.User.UserName, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Email" class="col-sm-3 col-form-label">E-Posta Adresi</label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("Email", Model.User.Email, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Name" class="col-sm-3 col-form-label">Roller</label>
+                        <div class="col-sm-9">
+                            @foreach (var item in Model.Roles)
+                            {
+                                <span class="badge badge-secondary mr-2">@item.Name</span>
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body text-lg-center">
+                    <button type="button" id="btnBack" class="btn btn-secondary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span class="text">Vazgeç</span>
+                    </button>
+
+                    &nbsp;
+
+                    <button type="submit" class="btn btn-success btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="text">Kaydet</span>
+                    </button>
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+    <div class="col-md-5 mb-4">
+
+
+
+        <div class="card shadow mb-4">
+
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    Hukuk Alanları
+                </h6>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 my-auto">
+                        <div class="text-center">
+                            <img class="img-fluid" style="width: 14rem;" src="~/Themes/Admin/img/undraw_book_lover_mkck.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#addFieldOfLawModal">
+                                    <span class="fa fa-plus"></span> Yeni Ekle
+                                </button>
+                            </li>
+                            @foreach (var item in Model.FieldsOfLaw)
+                            {
+                        <li class="list-group-item">
+
+                            @using (Html.BeginForm("RemoveFieldOfLawFromUser", "User", FormMethod.Post))
+                            {
+                                @item.Name
+
+                                @Html.AntiForgeryToken()
+
+                                @Html.Hidden("userId", Model.User.Id)
+                                @Html.Hidden("lawId", item.Id)
+                                <button type="submit" class="btn btn-sm btn-danger float-right" title="Kaldır">x</button>
+                            }
+
+                        </li>
+
+                        }
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<div id="addFieldOfLawModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Yeni Hukuk Alanı</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+
+            @using (Html.BeginForm("AddFieldOfLawToUser", "User", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">                             
+                                @Html.Hidden("userId",Model.User.Id)
+
+                                <label for="userId" class="control-label">Hukuk Alanı</label>
+                                @Html.DropDownList("lawId", (SelectList)ViewBag.userId, "Hukuk Alanı Seçiniz", new { @class = "form-control" })
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Vazgeç</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Ekle</button>
+                </div>
+            }
+        </div>
+    </div>
+</div><!-- /.modal -->
+
+
+@section createObj
+{
+}
+
+
+@section MyScript
+{
+    <script>
+        var btn = document.getElementById("btnBack");
+        btn.onclick = function () {
+            window.history.back();
+        }
+    </script>
+}

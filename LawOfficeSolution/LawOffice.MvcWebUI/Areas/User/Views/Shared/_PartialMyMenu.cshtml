@@ -1,0 +1,51 @@
+﻿@using LawOffice.Core.CrossCuttingConcerns.Security
+
+@{
+    //var user = System.Web.HttpContext.Current.User.Identity.Name;
+    var myIdentity = (Identity)System.Web.HttpContext.Current.User.Identity;
+    var FullName = myIdentity.FirstName + " " + myIdentity.LastName;
+}
+
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">@FullName</span>
+        <img class="img-profile rounded-circle" src="~/Themes/Img/userimage.jpg">
+     
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="@Url.Action("MyInfo","Home")">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            Bilgilerim
+        </a>
+        <a class="dropdown-item" href="@Url.Action("Index","Blog")">
+            <i class="fas fa-book-open fa-sm fa-fw mr-2 text-gray-400"></i>
+            Bloglarım
+        </a>    
+
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Çıkış
+        </a>
+    </div>
+</li>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Uyarı</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Sistemden çıkış yapmak üzeresiniz!</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Vazgeç</button>
+                <a class="btn btn-danger" href="@Url.Action("Logout","Home")">Çıkış</a>
+            </div>
+        </div>
+    </div>
+</div>

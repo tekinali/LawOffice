@@ -1,0 +1,74 @@
+﻿@using LawOffice.MvcWebUI.Areas.User.ViewModels.Blog
+@model IndexViewModel
+
+
+@{
+    ViewBag.Title = "Bloglarım";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">Bloglar</h6>
+            </div>
+
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dtBlogs" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Başlık</th>                             
+                                <th>Tarih</th>
+                                @*<th>Kategoriler</th>*@
+                                <th style="width:12%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Blogs)
+                            {
+                                <tr>
+                                    <td>@(item.Name.Length > 60 ? item.Name.Substring(0, 57) + "..." : item.Name)</td>                             
+                                    <td>@item.CreatedOn</td>
+                                    @*<td></td>*@
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Details","Blog",new { id=item.Id})" class="btn btn-primary btn-circle btn-sm" title="Detaylar">
+                                            <i class="fas fa-angle-right"></i>
+                                        </a>
+                                        <a href="@Url.Action("Edit","Blog",new { id=item.Id})" class="btn btn-secondary btn-circle btn-sm" title="Düzenle">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="@Url.Action("Delete","Blog",new { id=item.Id})" class="btn btn-danger btn-circle btn-sm" title="Sil">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section dataTable
+{
+    <script>
+        $(document).ready(function () {
+            $('#dtBlogs').DataTable({
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Turkish.json"
+                }
+            });
+        });
+
+    </script>
+}

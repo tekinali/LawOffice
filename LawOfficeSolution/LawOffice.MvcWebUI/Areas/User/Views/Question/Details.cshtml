@@ -1,0 +1,161 @@
+﻿@using LawOffice.MvcWebUI.Areas.User.ViewModels.Question
+@model DetailsViewModel
+
+
+@{
+    ViewBag.Title = "Soru Detay";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Soru Bilgileri</h6>
+            </div>
+            <div class="card-body">
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Kod</label>
+                        @Html.TextBoxFor(model => model.Question.Code, new { @class = "form-control", @readonly = "" })
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>Hukuk Alanı</label>
+                        @Html.TextBoxFor(model => model.FieldsOfLaw.Name, new { @class = "form-control", @readonly = "" })
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>Tarih</label>
+                        @Html.TextBoxFor(model => model.Question.CreatedOn, new { @class = "form-control", @readonly = "" })
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Ad-Soyad</label>
+                        @Html.TextBox("FullName", Model.Question.FirstName + " " + Model.Question.LastName, new { @class = "form-control", @readonly = "" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>E-Posta Adresi</label>
+                        @Html.TextBoxFor(model => model.Question.Email, new { @class = "form-control", @readonly = "" })
+                    </div>
+                </div>
+                <br />
+
+                <h4><b>Konu</b></h4>
+                <p>@Model.Question.Subject</p>
+                <hr />
+
+                <h4><b>Soru</b></h4>
+                <p>@Model.Question.Text</p>
+                <hr />
+
+                <div class="row pl-2">
+                    <button type="button" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#ModalAnswer">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="text">Soruyu Yanıtla</span>
+                    </button>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Cevap Bilgileri</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dtAnswers" cellspacing="0">
+                        <thead>
+                            <tr>
+
+                                <th>Cevap</th>
+                                <th>Cevaplayan</th>
+                                <th>Tarih</th>                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Answers)
+                            {
+
+                                <tr>
+                                    <td>@item.Text</td>
+                                    <td>@item.AppUser.UserName</td>
+                                    <td>@item.CreatedOn</td> 
+                                </tr>
+
+                            }
+
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ModalAnswer -->
+<div class="modal fade" id="ModalAnswer" tabindex="-1" role="dialog" aria-labelledby="ModalAnswerTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Yanıt</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @using (Html.BeginForm("AddAnswer", "Question", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("questionId", Model.Question.Id)                                      
+
+                    <div class="form-group">
+                        <label>Yanıt</label>
+                        @Html.TextArea("text", "", new { @class = "form-control", @rows = "4" })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="submit" class="btn btn-primary">Yanıtla</button>
+                </div>
+            }
+
+
+
+        </div>
+    </div>
+</div>
+
+@section dataTable
+{
+    <script>
+        $(document).ready(function () {
+            $('#dtAnswers').DataTable({
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Turkish.json"
+                }
+            });
+        });
+
+    </script>
+}

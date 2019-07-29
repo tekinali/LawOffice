@@ -1,0 +1,109 @@
+﻿@using LawOffice.MvcWebUI.Areas.User.ViewModels.Home
+@model IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Content Row -->
+<div class="row mb-4">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-md-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="font-weight-bold text-primary text-uppercase mb-1">Soru</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.QuestionCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-question fa-3x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-md-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="font-weight-bold text-success text-uppercase mb-1">Bloglarım</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.BlogCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="far fa-newspaper fa-3x text-success"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-md-4">
+        <div class="card border-left-dark shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="font-weight-bold text-dark text-uppercase mb-1">Cevaplarım</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.AnswerCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-check fa-3x text-dark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Son 5 Soru</h6>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Kod</th>
+                            <th>Başlık</th>
+                            <th>Hukuk Alanı</th>
+                            <th>Cevap</th>
+                            <th>Tarih</th>
+                            <th style="width:5%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Questions)
+                        {
+                            <tr>
+                                <td>@item.Code</td>
+                                <td>@item.Subject</td>
+                                <td>@item.FieldsOfLaw.Name</td>
+                                <td>@item.Answers.Count</td>
+                                <td>@item.CreatedOn</td>
+
+
+                                <td class="text-center">
+                                    <a href="@Url.Action("Details","Question",new { id=item.Id})" class="btn btn-primary btn-circle btn-sm" title="Detaylar">
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Approach -->
+
+</div>

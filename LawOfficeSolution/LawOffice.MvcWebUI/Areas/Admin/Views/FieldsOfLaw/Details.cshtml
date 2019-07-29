@@ -1,0 +1,97 @@
+﻿@using LawOffice.MvcWebUI.Areas.Admin.ViewModels.FieldsOfLaw
+@model DetailsViewModel
+
+@{
+    ViewBag.Title = "Hukuk Alanı Detay";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-left-dark shadow h-100 py-2">
+            <div class="card-body">
+
+                <div class="form-group row">
+                    <label for="Name" class="col-sm-2 col-form-label">Hukuk Alanı Id</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.FieldsOfLaw.Id, new { @class = "form-control", @readonly = "" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Name" class="col-sm-2 col-form-label">Hukuk Alanı Adı</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.FieldsOfLaw.Name, new { @class = "form-control", @readonly = "" })
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">@Model.FieldsOfLaw.Name Sahip Kullanıcılar</h6>
+            </div>
+
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dtUsers" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Kullanıcı Adı</th>
+                                <th>Ad</th>
+                                <th>Soyad</th>                         
+                                <th style="width:5%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Users)
+                            {
+                            <tr>
+                                <td>@item.UserName</td>
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+
+                                <td class="text-center">
+                                    <a href="@Url.Action("Details","User",new { id=item.Id})" class="btn btn-primary btn-circle btn-sm" title="Detaylar">
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section dataTable
+{
+    <script>
+        $(document).ready(function () {
+            $('#dtUsers').DataTable({
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Turkish.json"
+                }
+            });
+        });
+
+    </script>
+}

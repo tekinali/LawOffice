@@ -1,0 +1,83 @@
+﻿@using LawOffice.MvcWebUI.Areas.User.ViewModels.Question
+@model MyAnswersViewModel
+
+@{
+    ViewBag.Title = "Cevaplarım";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">Cevaplarım</h6>
+            </div>
+
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dtAnswers" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Soru Kodu</th>
+                                <th>Cevap</th>
+                                <th>Tarih</th>
+                                <th style="width:10%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Answers)
+                            {
+                                <tr>
+                                    <td>@item.Question.Code</td>
+                                    <td>@item.Text</td>
+                                    <td>@item.CreatedOn</td>
+
+                                    <td class="text-center">
+
+
+                                        @using (Html.BeginForm("DeleteAnswer", "Question", FormMethod.Post))
+                                        {
+                                            <a href="@Url.Action("Details","Question",new { id=item.Id})" class="btn btn-primary btn-circle btn-sm" target="_blank" title="Soru Detay">
+                                                <i class="fas fa-angle-right"></i>
+                                            </a>
+                                            @Html.AntiForgeryToken()
+                                            @Html.Hidden("answerId", item.Id)
+
+                                            <button type="submit" class="btn btn-danger btn-circle btn-sm" title="Cevabı Sil">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        }
+
+
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section dataTable
+{
+    <script>
+        $(document).ready(function () {
+            $('#dtAnswers').DataTable({
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Turkish.json"
+                }
+            });
+        });
+
+    </script>
+}

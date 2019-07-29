@@ -1,0 +1,75 @@
+﻿@using LawOffice.MvcWebUI.Helpers
+
+
+<li class="nav-item  @Html.ActivePage("Index","Home")">
+    <a class="nav-link" href="@Url.Action("Index","Home")">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Panel</span>
+    </a>
+</li>
+
+<!-- Nav Item - User -->
+<li class="nav-item  @Html.ActivePage("Index","User") @Html.ActivePage("Create","User") @Html.ActivePage("Details","User") @Html.ActivePage("Edit","User")">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
+        <i class="fas fa-users"></i>
+        <span>Kullanıcılar</span>
+    </a>
+    <div id="collapseUser" class="collapse @Html.ActivePageShow("Index","User") @Html.ActivePageShow("Create","User") @Html.ActivePageShow("Details","User") @Html.ActivePageShow("Edit","User")" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item @Html.ActivePage("Index","User")" href="@Url.Action("Index","User")">Listele</a>
+            <a class="collapse-item @Html.ActivePage("Create","User")" href="@Url.Action("Create","User")">Ekle</a>
+        </div>
+    </div>
+</li>
+
+<!-- Nav Item - Blog -->
+<li class="nav-item @Html.ActivePage("Index","Blog") @Html.ActivePage("Create","Blog") @Html.ActivePage("Details","Blog") @Html.ActivePage("Edit","Blog") @Html.ActivePage("Delete","Blog")">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog" aria-expanded="true" aria-controls="collapseBlog">
+        <i class="fas fa-th"></i>
+        <span>Blog</span>
+    </a>
+    <div id="collapseBlog" class="collapse @Html.ActivePageShow("Index","Blog") @Html.ActivePageShow("Create","Blog") @Html.ActivePageShow("Details","Blog") @Html.ActivePageShow("Edit","Blog") @Html.ActivePageShow("Delete","Blog")" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Blog Araçları:</h6>
+            <a class="collapse-item" href="@Url.Action("Index","Blog")">Listele</a>
+            <a class="collapse-item" href="@Url.Action("Create","Blog")">Ekle</a>
+
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Kategori Araçları:</h6>
+            <a class="collapse-item  @Html.ActivePage("Index","Blog")" href="@Url.Action("Index","Blog")">Listele</a>
+            <a class="collapse-item  @Html.ActivePage("Create","Blog")" href="@Url.Action("Create","Blog")">Ekle</a>
+        </div>
+    </div>
+</li>
+
+
+<!-- Nav Item - Question -->
+<li class="nav-item @Html.ActivePage("Index","Question") @Html.ActivePage("Details","Question")">
+    <a class="nav-link" href="@Url.Action("Index","Question")">
+        <i class="fas fa-question"></i>
+        <span>Sorular</span>
+    </a>
+</li>
+
+<!--Nav Item -FieldsOfLaw-->
+<li class="nav-item @Html.ActivePage("Index","FieldsOfLaw") @Html.ActivePage("Create","FieldsOfLaw") @Html.ActivePage("Details","FieldsOfLaw") @Html.ActivePage("Edit","FieldsOfLaw") @Html.ActivePage("Delete","FieldsOfLaw")">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFieldsOfLaw" aria-expanded="true" aria-controls="collapseFieldsOfLaw">
+        <i class="fas fa-gavel"></i>
+        <span>Hukuk Alanları</span>
+    </a>
+    <div id="collapseFieldsOfLaw" class="collapse @Html.ActivePageShow("Index","FieldsOfLaw") @Html.ActivePageShow("Create","FieldsOfLaw") @Html.ActivePageShow("Details","FieldsOfLaw") @Html.ActivePageShow("Edit","FieldsOfLaw") @Html.ActivePageShow("Delete","FieldsOfLaw")" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item @Html.ActivePage("Index","FieldsOfLaw")" href="@Url.Action("Index","FieldsOfLaw")">Listele</a>
+            <a class="collapse-item @Html.ActivePage("Create","FieldsOfLaw")" href="@Url.Action("Create","FieldsOfLaw")">Ekle</a>
+        </div>
+    </div>
+</li>
+
+
+<!-- Nav Item - Exit -->
+<li class="nav-item">
+    <a class="nav-link" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Çıkış</span>
+    </a>
+</li>

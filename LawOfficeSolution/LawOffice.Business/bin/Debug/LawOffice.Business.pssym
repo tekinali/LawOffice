@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="685" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
+    <Instance Declaration="#2=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.AnswerManager::GetAll()" Id="7924ab04e7046fca">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3=Intercepted by OnInvoke" Ordinal="0" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#4=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogManager::GetAll()" Id="7924ab040f83898b">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="7" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#5=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogManager::GetAllWithDetails()" Id="7924ab0436230804">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="20" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#6=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.CategoryManager::GetAll()" Id="7924ab04725a15e0">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="27" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#7=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.FieldsOfLawManager::GetAll()" Id="7924ab0425ef88b7">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="31" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#8=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.RoleManager::GetAll()" Id="7924ab04e91d8b79">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="41" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#9=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserAreaManager::GetAll()" Id="7924ab04c24c437a">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="47" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#10=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserAreaManager::GetAllWithDetails()" Id="7924ab04925e7087">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="48" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#11=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::GetAll()" Id="7924ab04cd4630fa">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="60" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#12=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserRoleManager::GetAll()" Id="7924ab047374fc18">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="72" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#13=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserRoleManager::GetAllWithDetails()" Id="7924ab04dccad9de">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" Ordinal="73" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#14=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation">
+    <Instance Declaration="#15=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.AnswerManager::Add(LawOffice.Entities.Concrete.Answer)" Id="7924ab0413bc4a8e">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="2" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#17=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.AnswerManager::Update(LawOffice.Entities.Concrete.Answer)" Id="7924ab045c31deff">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="4" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#18=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.AnswerManager::Delete(LawOffice.Entities.Concrete.Answer)" Id="7924ab04eafc56d1">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="6" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#19=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogCategoryManager::Add(LawOffice.Entities.Concrete.BlogCategory)" Id="7924ab0424f0f629">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="74" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#20=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogCategoryManager::Delete(LawOffice.Entities.Concrete.BlogCategory)" Id="7924ab040043bb75">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="75" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#21=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogManager::Add(LawOffice.Entities.Concrete.Blog, System.Int32)" Id="7924ab04398f2c19">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="12" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#22=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogManager::Update(LawOffice.Entities.Concrete.Blog)" Id="7924ab04dd08a5dd">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="15" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.BlogManager::Delete(LawOffice.Entities.Concrete.Blog)" Id="7924ab04c888ebb9">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="19" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#24=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.CategoryManager::Add(LawOffice.Entities.Concrete.Category)" Id="7924ab04f2b0e43e">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="23" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#25=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.CategoryManager::Delete(LawOffice.Entities.Concrete.Category)" Id="7924ab040920fae6">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="26" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#26=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.CategoryManager::Update(LawOffice.Entities.Concrete.Category)" Id="7924ab0445b11a13">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="30" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.FieldsOfLawManager::Add(LawOffice.Entities.Concrete.FieldsOfLaw)" Id="7924ab048c5d6d6d">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="34" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#28=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.FieldsOfLawManager::Update(LawOffice.Entities.Concrete.FieldsOfLaw)" Id="7924ab045e497529">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="37" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#29=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.FieldsOfLawManager::Delete(LawOffice.Entities.Concrete.FieldsOfLaw)" Id="7924ab0469d09d79">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="40" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#30=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::GetAll()" Id="7924ab0421dbf43c">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="76" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#31=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::List(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.Question,System.Boolean}})" Id="7924ab04d55a82af">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="77" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#32=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::Find(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.Question,System.Boolean}})" Id="7924ab041fd3cb72">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="78" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#33=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::Delete(LawOffice.Entities.Concrete.Question)" Id="7924ab04ca1f438f">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="81" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#34=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::WithDetails(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.Question,System.Boolean}})" Id="7924ab04af360fe8">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="82" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#35=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::ListWithDetails(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.Question,System.Boolean}})" Id="7924ab0432851b91">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="83" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#36=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::GetAllWithDetails()" Id="7924ab04d8d4244f">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="84" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#37=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserAreaManager::Add(LawOffice.Entities.Concrete.UserArea)" Id="7924ab047f984e0a">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="44" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#38=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserAreaManager::Delete(LawOffice.Entities.Concrete.UserArea)" Id="7924ab0462eb13ae">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="46" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::Add(LawOffice.Entities.Concrete.AppUser)" Id="7924ab0405798d00">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="53" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::Delete(LawOffice.Entities.Concrete.AppUser)" Id="7924ab04fb47f443">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="57" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#41=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::Find(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.AppUser,System.Boolean}})" Id="7924ab0406776f95">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="58" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#11" Id="7924ab04982d6670">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="59" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#42=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::List(System.Linq.Expressions.Expression{[mscorlib]System.Func{[LawOffice.Entities]LawOffice.Entities.Concrete.AppUser,System.Boolean}})" Id="7924ab04301fc2a5">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="61" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#43=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::Update(LawOffice.Entities.Concrete.AppUser)" Id="7924ab04d918ce9b">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="64" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#44=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserRoleManager::Add(LawOffice.Entities.Concrete.UserRole)" Id="7924ab043b1ecf49">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="69" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#45=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserRoleManager::Delete(LawOffice.Entities.Concrete.UserRole)" Id="7924ab04b9ac041d">
+      <Target>
+        <JoinPoint Advising="#14" Description="#16" Ordinal="71" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#46=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
+    <Instance Declaration="#15" Id="7924ab04b331f7e6">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#17" Id="7924ab04ae86f70c">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="3" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#18" Id="7924ab040d39d63b">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="5" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#21" Id="7924ab04902e8576">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="11" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#22" Id="7924ab0452d43110">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="13" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23" Id="7924ab04756691d0">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="18" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#24" Id="7924ab04fe13e1b6">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="21" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#25" Id="7924ab04c67afc9b">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="24" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#26" Id="7924ab045b4dfbe7">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="28" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27" Id="7924ab04765e7657">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="32" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#28" Id="7924ab04370c508d">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="35" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#29" Id="7924ab0410427544">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="38" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#37" Id="7924ab04ae6c710b">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="42" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#38" Id="7924ab04730af0d1">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="45" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="7924ab04b1ed6bcb">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="52" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40" Id="7924ab04619bf444">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="56" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#43" Id="7924ab04841e7f5b">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="62" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#44" Id="7924ab046a778448">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="67" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#45" Id="7924ab04494ae54f">
+      <Target>
+        <JoinPoint Advising="#46" Description="#16" Ordinal="70" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#47=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.LogAspects.LogAspect">
+    <Instance Declaration="#21" Id="7924ab04036c4498">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="8" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23" Id="7924ab04a7e22208">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="16" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="7924ab04c3b88334">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="49" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40" Id="7924ab045622bce2">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="54" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#48=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::LoginUser(System.String, System.String)" Id="7924ab0487cef21e">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="65" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#49=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.UserManager::LoginAdmin(System.String, System.String)" Id="7924ab04dee60a42">
+      <Target>
+        <JoinPoint Advising="#47" Description="#16" Ordinal="66" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#50=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
+    <Instance Declaration="#21" Id="7924ab04bd552c7f">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="9" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23" Id="7924ab04dd32d084">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="17" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#25" Id="7924ab0432204951">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="25" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#29" Id="7924ab04a6b89ea9">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="39" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#33" Id="7924ab042e9574a3">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="80" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="7924ab040cc1b5d4">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="50" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40" Id="7924ab04746aba79">
+      <Target>
+        <JoinPoint Advising="#50" Description="#16" Ordinal="55" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#51=T:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
+    <Instance Declaration="#21" Id="7924ab04f1079c14">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="10" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#22" Id="7924ab044b09fdbc">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="14" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#24" Id="7924ab04dc0bf696">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="22" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#26" Id="7924ab04f06c4100">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="29" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27" Id="7924ab044a3715bb">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="33" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#28" Id="7924ab0449c36703">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="36" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#52=M:[LawOffice.Business]LawOffice.Business.Concrete.Managers.QuestionManager::Add(LawOffice.Entities.Concrete.Question)" Id="7924ab04a9873668">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="79" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#37" Id="7924ab04f7068e48">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="43" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="7924ab04d27a6e95">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="51" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#43" Id="7924ab043a27cd92">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="63" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#44" Id="7924ab048fd9b2d0">
+      <Target>
+        <JoinPoint Advising="#51" Description="#16" Ordinal="68" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#53=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54=2" Description="#55=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#56=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#57=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#58=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#59=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnEntry([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#60=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#61=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.LogAspects.LogAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#62=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#63=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#64=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+  <Annotation Target="#65=M:[LawOffice.Core]LawOffice.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#54" Description="#55" />
+</Symbols>
